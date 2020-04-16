@@ -1,9 +1,9 @@
-# Backend Challenge
+# Desafio Backend
 Eu sou o Victor candidato a vaga de desenvolvedor Java da Via Varejo.
 
 Contatos: toedio6@gmail.com / 11 99656-6750
 
-## Technologies
+## Tecnologias
 - Java 8
 - Spring Boot 2.2.6
 - Maven
