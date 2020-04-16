@@ -1,4 +1,6 @@
-interestrate.selic.url: https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados?formato=json
+interestrate.selic:
+  url: https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados
+  default: 3
 installment.min.interest-free: 6
 spring:
   cache.type: redis

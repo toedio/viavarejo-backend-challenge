@@ -15,7 +15,7 @@ import org.springframework.web.context.WebApplicationContext;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ActiveProfiles("test")
-abstract class BackendChallengeTest {
+public abstract class BackendChallengeIntegrationTest {
 
     @Autowired
     protected WebApplicationContext wac;

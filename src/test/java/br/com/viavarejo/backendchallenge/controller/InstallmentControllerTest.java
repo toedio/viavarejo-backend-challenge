@@ -1,5 +1,6 @@
-package br.com.viavarejo.backendchallenge;
+package br.com.viavarejo.backendchallenge.controller;
 
+import br.com.viavarejo.backendchallenge.BackendChallengeIntegrationTest;
 import br.com.viavarejo.backendchallenge.dto.CheckoutDTO;
 import br.com.viavarejo.backendchallenge.dto.InstallmentDTO;
 import br.com.viavarejo.backendchallenge.dto.PaymentTermDTO;
@@ -25,7 +26,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-public class InstallmentControllerTest extends BackendChallengeTest {
+public class InstallmentControllerTest extends BackendChallengeIntegrationTest {
 
     private MockMvc mockMvc;
 
@@ -42,7 +43,7 @@ public class InstallmentControllerTest extends BackendChallengeTest {
 
     @Test
     public void shouldCalculateInstallmentsInterestFree() throws Exception {
-        ProductDTO productDTO = new ProductDTO(10L, FAKER.funnyName().name(), BigDecimal.valueOf(100));
+        ProductDTO productDTO = new ProductDTO(FAKER.number().randomNumber(), FAKER.funnyName().name(), BigDecimal.valueOf(100));
         PaymentTermDTO paymentTermDTO = new PaymentTermDTO(3, BigDecimal.ZERO);
         CheckoutDTO checkoutDTO = new CheckoutDTO(productDTO, paymentTermDTO);
 
@@ -63,7 +64,7 @@ public class InstallmentControllerTest extends BackendChallengeTest {
 
     @Test
     public void shouldCalculateInstallmentsInterest() throws Exception {
-        ProductDTO productDTO = new ProductDTO(10L, FAKER.funnyName().name(), BigDecimal.valueOf(100));
+        ProductDTO productDTO = new ProductDTO(FAKER.number().randomNumber(), FAKER.funnyName().name(), BigDecimal.valueOf(100));
         PaymentTermDTO paymentTermDTO = new PaymentTermDTO(7, BigDecimal.ZERO);
         CheckoutDTO checkoutDTO = new CheckoutDTO(productDTO, paymentTermDTO);
 
