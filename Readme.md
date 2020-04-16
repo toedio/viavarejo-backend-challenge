@@ -31,7 +31,7 @@ Foi criado apenas um serviço conforme solicitado e o mesmo foi documentado bem c
 ## Executar os testes
 Comando ```mvn test```
 
-## Run
+## Executar aplicação
 A aplicação foi criada utilizando a estrutura de docker compose conforme falado acima. Quando executar o comando iniciará o redis (necessário para o cache) e em seguida a aplicação;
 
 Comando ```docker-compose up```
