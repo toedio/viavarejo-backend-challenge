@@ -1,7 +1,5 @@
 # Desafio Backend
-Eu sou o Victor candidato a vaga de desenvolvedor Java da Via Varejo.
-
-Contatos: toedio6@gmail.com / 11 99656-6750
+Link do desafio: https://github.com/viavarejo/backend-test
 
 ## Tecnologias
 - Java 8
@@ -10,30 +8,30 @@ Contatos: toedio6@gmail.com / 11 99656-6750
 - Redis
 - Docker
 
-## Decisıes TÈcnicas
+## Decis√µes T√©cnicas
 
-### Cache de aplicaÁ„o utilizando Redis
-Eu implementei cache no serviÁo de busca taxa de juros SELIC. Essa opÁ„o melhora a performance da aplicaÁ„o evitando fazer a requisiÁ„o na API externa todas as vezes que a consulta for feita. Foi utilizado como chave do cache a data, portanto ele zera o cache todos os dias evitando que o serviÁo responda uma taxa de juros desatualizada. Utilizei o banco de dados Redis que È muito perform·tico e ideal para cache.
+### Cache de aplica√ß√£o utilizando Redis
+Eu implementei cache no servi√ßo de busca taxa de juros SELIC. Essa op√ß√£o melhora a performance da aplica√ß√£o evitando fazer a requisi√ß√£o na API externa todas as vezes que a consulta for feita. Foi utilizado como chave do cache a data, portanto ele zera o cache todos os dias evitando que o servi√ßo responda uma taxa de juros desatualizada. Utilizei o banco de dados Redis que √© muito perform√°tico e ideal para cache.
 
-### ValidaÁıes no Controller
-A classe InstallmentController possui notaÁıes de validaÁ„o como @Valid e @NotNull e os DTOS tambÈm possui dentro de seus mÈtodos. Eu escolhi fazer a validaÁ„o na primeira camada porque dessa forma evita que a aplicaÁ„o processe objetos inv·lidos e responda o cliente imediatamente caso tenha objetos inv·lidos. Outra vantagem È que os serviÁos j· recebem os objetos totalmente validados.
+### Valida√ß√µes no Controller
+A classe InstallmentController possui nota√ß√µes de valida√ß√£o como @Valid e @NotNull e os DTOS tamb√©m possui dentro de seus m√©todos. Eu escolhi fazer a valida√ß√£o na primeira camada porque dessa forma evita que a aplica√ß√£o processe objetos inv√°lidos e responda o cliente imediatamente caso tenha objetos inv√°lidos. Outra vantagem √© que os servi√ßos j√° recebem os objetos totalmente validados.
 
 ### Converters
-A aplicaÁ„o tem um serviÁo de convers„o de objetos utilizado para converter DTO em entidade e vice-versa e esse serviÁo È utilizado na classe InstallmentController. Dessa forma, o serviÁo conhece apenas as entidades e o controller apenas os DTOs.
+A aplica√ß√£o tem um servi√ßo de convers√£o de objetos utilizado para converter DTO em entidade e vice-versa e esse servi√ßo √© utilizado na classe InstallmentController. Dessa forma, o servi√ßo conhece apenas as entidades e o controller apenas os DTOs.
 
 ### Docker Compose
-A aplicaÁ„o utiliza a tecnologia docker compose que inicia automaticamente todas as dependÍncias e em seguida inicia a aplicaÁ„o na porta 8080. 
-Eu escolhi essa tecnologia porque È uma ferramenta de f·cil utilizaÁ„o para executar v·rios containers ao mesmo tempo, permite que a aplicaÁ„o execute em qualquer ambiente, tenha sua infraestrutura sempre padronizada evitando falhas por vers„o da JDK por exemplo.
+A aplica√ß√£o utiliza a tecnologia docker compose que inicia automaticamente todas as depend√™ncias e em seguida inicia a aplica√ß√£o na porta 8080. 
+Eu escolhi essa tecnologia porque √© uma ferramenta de f√°cil utiliza√ß√£o para executar v√°rios containers ao mesmo tempo, permite que a aplica√ß√£o execute em qualquer ambiente, tenha sua infraestrutura sempre padronizada evitando falhas por vers√£o da JDK por exemplo.
 
-## ServiÁos
-Foi criado apenas um serviÁo conforme solicitado e o mesmo foi documentado bem como os DTOs utilizando swagger. A documentaÁ„o fica disponÌvel assim que a API iniciar em http://localhost:8080/swagger-ui.html
+## Servi√ßos
+Foi criado apenas um servi√ßo conforme solicitado e o mesmo foi documentado bem como os DTOs utilizando swagger. A documenta√ß√£o fica dispon√≠vel assim que a API iniciar em http://localhost:8080/swagger-ui.html
 
 ## Executar os testes
 Comando ```mvn test```
 
-## Executar aplicaÁ„o
-A aplicaÁ„o foi criada utilizando a estrutura de docker compose conforme falado acima. Quando executar o comando iniciar· o redis (necess·rio para o cache) e em seguida a aplicaÁ„o;
+## Executar aplica√ß√£o
+A aplica√ß√£o foi criada utilizando a estrutura de docker compose conforme falado acima. Quando executar o comando iniciar√° o redis (necess√°rio para o cache) e em seguida a aplica√ß√£o;
 
 Comando ```docker-compose up```
 
-Caso n„o tenha docker-compose instalado: https://docs.docker.com/compose/gettingstarted/
+Caso n√£o tenha docker-compose instalado: https://docs.docker.com/compose/gettingstarted/
